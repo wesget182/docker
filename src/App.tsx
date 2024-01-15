@@ -1,16 +1,28 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0);
+function App(): JSX.Element {
+	const [count, setCount] = useState(0);
 
-  return (
-    <>
-      <div>Hi there</div>
-    </>
-  );
+	const increment = () => {
+		setCount(count + 1);
+	};
+
+	const decrement = () => {
+		setCount(count - 1);
+	};
+	return (
+		<>
+			<div>
+				<h3>Button Incrementer bullshit</h3>
+				<p>{count}</p>
+			</div>
+
+			<div>
+				<button onClick={increment}>+</button>
+				<button onClick={decrement}>-</button>
+			</div>
+		</>
+	);
 }
 
 export default App;
